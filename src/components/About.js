@@ -1,11 +1,12 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import '../styles/About.css'
 
 function About(){
   return(
     <>
     <h1>This is About Us Page</h1>
-    <Card style={{ width: '18rem' }}>
+    <Card style={{ width: '500px' }}>
       <Card.Img variant="top" src="https://pyxis.nymag.com/v1/imgs/079/3c3/fb8b8f4cd5650c8430bc60773e6c14c736-12-woman-computer-coder.rsquare.w700.jpg" />
       <Card.Body>
         <Card.Title>Hi! My name is Anastasija</Card.Title>
@@ -20,8 +21,7 @@ Eager to learn and work hard to progress in long-term development career and tak
 
 
         </Card.Text>
-        <Button variant="primary">Go somewhere</Button>
-      </Card.Body>
+        </Card.Body>
     </Card>
     </>
 

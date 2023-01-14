@@ -2,12 +2,17 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 import axios from "axios";
+import { useAuth0 } from "@auth0/auth0-react";
+
 
 function UpdateProductModal(props){
+  const { user } = useAuth0();
+  let username = user.email||user.nickname;
 
   const updateProductInfo = async (e) => {
     e.preventDefault();
     const newProductData = {
+      username: username,
       name: e.target.name.value,
       brand: e.target.brand.value,
       price: e.target.price.value,
