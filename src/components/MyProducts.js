@@ -15,7 +15,9 @@ const { user } = useAuth0();
 useEffect(() => {
   const getProducts = async () => {
     let username = user.email||user.nickname;
-    let resultProducts = await axios.get(`http://localhost:3001/products?username=${username}`);
+    console.log(process.env.REACT_APP_SERVER);
+    let resultProducts = await axios.get(`${process.env.REACT_APP_SERVER}/products?username=${username}`);
+    console.log(resultProducts.data);
     setResults(resultProducts.data);
     setShowItems(true);
   };
@@ -24,7 +26,7 @@ useEffect(() => {
 
 const deleteProduct = async (index) => {
   let username = user.email||user.nickname;
-  let newProducts = await axios.delete(`http://localhost:3001/product/${index}?username=${username}`);
+  let newProducts = await axios.delete(`${process.env.REACT_APP_SERVER}/product/${index}?username=${username}`);
   setResults(newProducts.data);
 };
 

@@ -20,7 +20,7 @@ function UpdateProductModal(props){
       description: e.target.description.value,
     };
 
-    const resultsUpdate = await axios.put(`http://localhost:3001/product/${props.itemIndex}`, newProductData);
+    const resultsUpdate = await axios.put(`${process.env.REACT_APP_SERVER}/product/${props.itemIndex}`, newProductData);
     props.hideUpdateModal();
     props.updateProducts(resultsUpdate.data)
   };
