@@ -52,7 +52,9 @@ function UpdateProductModal(props){
           <Form.Label>Price</Form.Label>
           <Form.Control
             defaultValue={props.itemInfo.price}
-            type="number"
+            type="number" 
+            max="10000"
+            step="any"
             name="price"
           />
         </Form.Group>
